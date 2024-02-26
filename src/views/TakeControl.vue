@@ -90,8 +90,8 @@ export default {
     const { params } = useRoute();
 
     // take control setup
-    const control = ref("");
-    const status = ref(null);
+    // const control = ref("");
+    // const status = ref(null);
 
     // meshcentral tabs
     const terminal = ref("");
