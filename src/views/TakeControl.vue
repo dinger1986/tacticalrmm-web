@@ -23,12 +23,38 @@
       />
       <q-space />
     </q-bar>
-
+    <q-tabs
+      v-model="tab"
+      dense
+      inline-label
+      class="text-grey"
+      active-color="primary"
+      indicator-color="primary"
+      align="left"
+      narrow-indicator
+    >
+	<q-tab name="terminal" icon="fas fa-terminal" label="Terminal" />
+	<q-tab name="control" icon="fas fa-terminal" label="Desktop" />
+	 </q-tabs>
+    <q-separator />
+    <q-tab-panels v-model="tab" v-if="$route.query.agentPlatform === 'linux'">
+      <q-tab-panel name="terminal" class="q-pa-none">
+        <iframe
+          :src="terminal"
+          :style="{
+            height: `${$q.screen.height - 30}px`,
+            width: `${$q.screen.width}px`,
+          }"
+        ></iframe>
+	 </q-tab-panel>
+<q-tab-panel name="control" class="q-pa-none">
     <q-video
       v-show="control"
       :src="control"
       :style="{ height: `${$q.screen.height - 26}px` }"
     ></q-video>
+  </q-tab-panel>
+  </q-tab-panels>
   </div>
 </template>
 
@@ -90,7 +116,7 @@ export default {
         control.value = data.control;
         status.value = data.status;
         useMeta({
-          title: `${data.hostname} - ${data.client} - ${data.site} | Remote Background`,
+          title: `${data.hostname} - ${data.client} - ${data.site} | Take Control Background`,
         });
       } catch (e) {
         console.error(e);
