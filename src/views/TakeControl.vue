@@ -93,6 +93,10 @@ export default {
     const control = ref("");
     const status = ref(null);
 
+    // meshcentral tabs
+    const terminal = ref("");
+    const tab = ref("terminal");
+
     const statusColor = computed(() => {
       switch (status.value) {
         case "online":
