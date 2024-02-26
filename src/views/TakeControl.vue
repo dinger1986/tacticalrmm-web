@@ -37,7 +37,7 @@
 	<q-tab name="control" icon="fas fa-terminal" label="Desktop" />
 	 </q-tabs>
     <q-separator />
-    <q-tab-panels v-model="tab" v-if="$route.query.agentPlatform === 'linux'">
+    <q-tab-panels v-model="tab">
       <q-tab-panel name="terminal" class="q-pa-none">
         <iframe
           :src="terminal"
