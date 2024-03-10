@@ -59,7 +59,7 @@
                 <q-tooltip
                   v-if="description"
                   class="bg-white text-primary text-body1"
-                  v-html="formatScriptDescription(description)"
+                  v-html="formatScriptSyntax(syntax)"
                 />
               </q-btn>
             </template>
