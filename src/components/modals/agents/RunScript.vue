@@ -57,9 +57,9 @@
                 @click="openScriptURL"
               >
                 <q-tooltip
-                  v-if="syntax"
+                  v-if="description"
                   class="bg-white text-primary text-body1"
-                  v-html="formatScriptSyntax(syntax)"
+                  v-html="formatScriptDescription(description)"
                 />
               </q-btn>
             </template>
